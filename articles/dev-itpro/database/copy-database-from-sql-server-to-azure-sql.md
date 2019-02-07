@@ -221,6 +221,10 @@ Run the following script against the imported database. The script performs the 
 
 > [!NOTE]
 > You must add the tenant ID to the last three queries. You can find this value by querying the SysServiceConfigurationSetting table in an existing database in the target environment.
+Run this SQL Query against the existing database in the target environment to get the tenant ID.
+SELECT [Value],[NAME]
+  FROM [dbo].[SYSSERVICECONFIGURATIONSETTING]
+  WHERE NAME = 'TENANTID'
 
 ```
 CREATE USER axdeployuser FROM LOGIN axdeployuser
